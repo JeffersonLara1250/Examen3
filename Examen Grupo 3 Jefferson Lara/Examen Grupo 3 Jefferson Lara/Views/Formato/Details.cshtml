@@ -1,0 +1,109 @@
+﻿@model Examen_Grupo_3_Jefferson_Lara.Models.FormatoAcosoLaboral
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h3>Detalles</h3>
+<hr />
+<table class="table table">
+</table>
+
+
+<form asp-action="Details">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+
+        <h6 class="text-center">FORMATO DE ACOSO LABORAL</h6>
+        <hr />
+        <label class="control-label">FECHA DILIGENCIAMIENTO</label>
+        <hr />
+        <label>@Html.DisplayFor(model => model.Fecha)</label>
+
+        <hr />
+        <h6>FORMATO PARA IMPONER QUEJAS POR ACOSO LABORAL O PRESENTAR SUGERENCIAS ANTE EL COMITE DE CONVIVENCIA LABORAL DE LA EMPRESACOBALSANLTINA</h6>
+        <hr />
+
+        <label class="control-label">Nombre</label>
+        <hr />
+        <label>@Html.DisplayFor(model => model.Nombre)</label>
+
+        <hr />
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th>     </th>
+                        <th></th>
+                        <th></th>
+                        <th>     </th>
+                        <th></th>
+                        <th></th>
+                        <th>     </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> <label class="control-label">IDENTIDAD:</label></td>
+                        <td><label>@Html.DisplayFor(model => model.Identidad)</label></td>
+
+                        <td><label class="control-label">--------C.C:</label></td>
+                        <td> <label>@Html.DisplayFor(model => model.CC)</label></td>
+                        <td><label class="control-label">--------NUMERO:</label></td>
+                        <td><label>@Html.DisplayFor(model => model.NumeroCelular)</label></td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <hr />
+        <label class="control-label">DEPENDENCIA</label>
+        <hr />
+        <label>@Html.DisplayFor(model => model.Dependencia)</label>
+
+        <label class="control-label">CARGO</label>
+        <hr />
+        <label>@Html.DisplayFor(model => model.Cargo)</label>
+
+        <label class="control-label">CORREO ELECTRONICO</label>
+        <hr />
+        <label>@Html.DisplayFor(model => model.Correo)</label>
+
+        <hr />
+        <h6 class="text-center">QUEJAS</h6>
+        <hr />
+
+
+        <h6 class="text-center">Si usted quiere presentar una queja,diligencie los siguientes espacios.Si va a presentar una sugerencia diligencie solo el espacio diseñado para ese proposito</h6>
+        <hr />
+
+        <label class="control-label">RELACION DE HECHOS CONSTITUTIVOS DE LA QUEJA</label>
+        <hr />
+        <label>@Html.DisplayFor(model => model.ParrafoHechos)</label>
+
+        <hr />
+        <h6 class="text-center">(De ser necesario el Comite podra solicitarle porteriormente la ampliacion de la informacion ofrecida)</h6>
+        <hr />
+
+        <label class="control-label">¿CUENTA USTED CON PRUEBAS?</label>
+        <hr />
+        <label>@Html.DisplayFor(model => model.Prueba)</label>
+
+        <div class="form-group">
+            <a asp-action="Index" class="btn btn-dark">Regresar</a>
+        </div>
+    </div>
+
+</form>
+
+
+
+@section Scripts{
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

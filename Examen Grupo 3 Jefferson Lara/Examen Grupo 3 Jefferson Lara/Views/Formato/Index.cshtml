@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Examen_Grupo_3_Jefferson_Lara.Models.FormatoAcosoLaboral>
+
+@{ ViewData["Title"] = "Formato";
+}
+
+<h1>Quejas</h1>
+
+<div class="row">
+    <div class="col-auto">
+        <input type="text"  class="form-control-plaintext" name="txt-search" placeholder="Buscar..." />
+    </div>
+    <div class="col-auto">
+        <a class="btn btn-success" onclick="formato_search()" id="search-link">BUSCAR</a>
+        <a asp-action="Create" class="btn btn-success">CREAR</a>
+    </div>
+</div>
+
+
+    <div class="row">
+        <table class="table table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Nombre)
+                    </th>
+                    <th></th>
+                </tr>
+
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                        <td>
+                            <a asp-action="Edit" class="btn btn-warning" asp-route-id="@item.Id">Editar</a>
+                            <a asp-action="Details" class="btn btn-warning" asp-route-id="@item.Id">Detalles</a>
+                            <a asp-action="Delete" class="btn btn-warning" asp-route-id="@item.Id">Borrar</a>
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <script src="~/js/for.js" asp-append-version="true"></script>
